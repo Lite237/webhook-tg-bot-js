@@ -12,7 +12,8 @@ const production = async (req, res, bot) => {
     }
 
     if (req.method === "POST") {
-        await bot.processUpdate(req.body);
+        bot.processUpdate(req.body);
+        res.sendStatus(200);
     } else {
         res.status(200).json("Listening to bot events...");
     }
